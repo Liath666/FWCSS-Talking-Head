@@ -1,0 +1,358 @@
+/*************************************************************************
+* FWCSS-Talking-Head
+* By Liath
+* https://github.com/Liath666/FWCSS-Talking-Head
+**************************************************************************/
+
+body{
+	background-color : #303030;
+	min-width: 100vw;
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow : hidden;
+}
+
+.boutons{
+	position: absolute;
+	bottom:10px;left:10px;
+}
+
+.redborder {border : 1px solid red;}
+.blueborder{border : 1px solid blue;}
+.greenborder{border : 1px solid green;}
+
+.picture {
+	position: absolute;
+	width: 800px;
+	height: 600px;
+	/*overflow: hidden;*/
+}
+.picture *, .picture *:before, .picture *:after {
+	content: '';
+	position: absolute;
+}
+
+
+
+.tete{
+height : 600px;
+width : 500px;
+
+}
+
+.tete .oreilles{
+	background-color : #FFCC99;
+	background : linear-gradient(to bottom, #FFCC99, #FF9999);
+	height : 150px;
+	width:120%;
+	border-radius : 150px 150px 300px 300px;
+	top : 45%;
+	left:50%;
+	margin-left : -60%;
+	
+}
+
+.tete .visage{
+	height:100%;
+	width: 100%;
+	border-radius : 75% 75% 85% 85%;
+	background-color : #FFCC99;
+	background : linear-gradient(to bottom right, #FFCC99, #FF9999);
+}
+
+.tete .visage .yeux{
+	margin-top: 55%;
+	width : 100%;	
+}
+.tete .visage .yeux *{
+	background-color : #FFFFFF;
+	height : 65px;
+	width : 110px;
+	border-top : 3px solid #DC7171;
+	overflow: hidden;
+	
+}
+
+.tete .visage .yeux .oeil_droit{
+	right : 15%;
+	border-radius : 450px 350px 450px 450px;
+	border-left : 5px solid #DC7171;
+	
+	
+	animation-name: yeux;
+	animation-duration: 10s;
+	animation-iteration-count: infinite;
+	
+	animation-timing-function: ease-in-out;
+}
+
+.tete .visage .yeux .oeil_gauche{
+	left : 15%;
+	
+	border-radius : 350px 450px 450px 450px;
+	border-right : 5px solid #DC7171;
+	
+	
+	animation-name: yeux;
+	animation-duration: 10s;
+	animation-iteration-count: infinite;
+	animation-direction: normal;
+	animation-timing-function: ease-in-out;
+	
+}
+.tete .visage .yeux .oeil_droit:after{
+	left: 50%;
+	margin-left : -33px;
+}
+
+
+.tete .visage .yeux .oeil_gauche:after{
+	right: 50%;
+	margin-right: -33px;
+}
+
+.tete .visage .yeux *:after{
+	height : 40px;
+	width : 40px;
+	top : -5px;
+	border-radius : 100px;
+	background-color : black;
+	border : 10px solid red;
+	border-color : darkolivegreen;
+	z-index : -1;
+}
+
+.tete .visage .yeux *:before{
+	height:10px;
+	width:10px;
+	background-color : #FFFFFF;
+	top : 10px;
+	left : 40px;
+	border-radius : 30px;
+	z-index : 99;
+	
+}
+
+.tete .visage .sourcils{
+	top: 35%;
+	width : 100%;
+}
+.tete .visage .sourcils *{
+	height : 30px;
+	width : 120px;
+	border-radius : 45px;
+	background-color : #352515;
+}
+
+.tete .visage .sourcils .sourcil_g{
+	left: 15%;
+	border-radius:75px;
+	border-top-left-radius : 150px;
+	border-top-right-radius : 110px;
+	transform : rotate(-7deg);
+}
+.tete .visage .sourcils .sourcil_d{
+	right: 15%;
+	border-radius:75px;
+	border-top-right-radius : 150px;
+	border-top-left-radius : 110px;
+	transform : rotate(7deg);
+}
+
+
+.tete .visage .nez {
+	width: 0; 
+	height: 0; 
+	border-left: 50px solid transparent;
+	border-right: 50px solid transparent;
+	border-top: 20px solid #DC7171;
+	border-radius : 10px;
+	
+	top : 69%;
+	left: 50%;
+	margin-left: -50px;
+	position : relative;
+	
+}
+
+.tete .visage .bouche {
+	top : 83%;
+	left: 50%;
+	margin-left: -75px;
+	height : 10px;
+	width : 150px;
+	background-color : black;
+	border-radius : 75px;
+	border-bottom : 5px solid #DC7171;
+}
+
+.tete .visage .parle{
+	animation-name: bouche;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-timing-function: ease-in-out;
+}
+
+.tete .cheveux{
+	top : -50px;
+	left: 50%;
+	
+}
+.tete .cheveux .meche_g,
+.tete .cheveux .meche_d{
+	background-color : #352515;
+	height : 75px;
+	width : 300px;
+}
+.tete .cheveux .meche_g{
+	margin-left: -275px;
+	border-radius: 450px 300px 100px 20px;
+	transform-origin: 100% 100%;
+	transform : rotate(-30deg);
+}
+
+
+.tete .cheveux .meche_d{
+	margin-left: -25px;
+	border-radius: 300px 450px 20px 100px;
+	transform-origin: 0 100%;
+	transform : rotate(30deg);
+	/*
+	height : 200px;
+	width : 215px;
+	border-radius : 550px;
+	background-color : transparent;
+	border-top : 100px solid #352515;
+	border-right : 100px solid #352515;*/
+}
+
+.tete .cheveux .meche_d:before{
+	border-radius: 300px 450px 20px 100px;
+	transform-origin: 0 100%;
+	transform : rotate(-15deg);
+	height : 75px;
+	width : 250px;
+	background-color : #352515;
+	
+	
+	
+}
+
+.tete .cheveux .meche_g:before{
+	border-radius: 450px 300px 100px 20px;
+	transform-origin: 100% 100%;
+	transform : rotate(15deg);
+	height : 75px;
+	width : 250px;
+	right:0;
+	background-color : #352515;
+
+}
+
+.tete .cheveux .meche_g:after{
+	border-radius: 0px 300px 450px 30px;
+	transform-origin: 0 0;
+	transform : rotate(15deg);
+	height : 75px;
+	width : 200px;
+	right:0;
+	background-color : #352515;
+
+}
+
+
+@keyframes bouche {
+  0%   {
+		top : 83%;
+		left: 50%;
+		margin-left: -75px;
+		height : 10px;
+		width : 150px;
+		
+		border-radius : 75px;
+  }
+  25%  {
+	  	top : 83%;
+		left: 50%;
+		margin-left: -75px;
+		height : 10px;
+		width : 150px;
+		
+		border-radius : 75px;
+  }
+  50%  {
+		margin-left: -32px;
+		height : 50px;
+		width : 75px;
+		border-radius : 75px;
+  }
+  60%	{
+		margin-left: -45px;
+		height : 10px;
+		width : 90px;
+		border-radius : 75px;
+  }
+  65%	{
+		margin-left: -10px;
+		height : 20px;
+		width : 20px;
+		border-radius : 50px;
+  }
+  
+  75%  {
+		margin-left: -25px;
+		height : 50px;
+		width : 50px;
+		border-radius : 75px;
+	}
+  85%	{
+		top: 80%;
+		margin-left: -75px;
+		height : 75px;
+		width : 150px;
+		border-radius : 75px 75px 450px 450px;
+  }
+
+}
+
+@keyframes yeux{
+	6.0%  { transform: scaleY(1); }
+	6.6%  { transform: scaleY(0); }
+	7.2%  { transform: scaleY(1); }
+
+	9.3%  { transform: scaleY(1); }
+	9.9%  { transform: scaleY(0); }
+	10.5% { transform: scaleY(1); }
+
+	17.4% { transform: scaleY(1); }
+	18.2% { transform: scaleY(0); }
+	18.9% { transform: scaleY(1); }
+
+	22.8% { transform: scaleY(1); }
+	23.5% { transform: scaleY(0); }
+	24.3% { transform: scaleY(1); }
+
+	35.7% { transform: scaleY(1); }
+	36.5% { transform: scaleY(0); }
+	37.2% { transform: scaleY(1); }
+
+	57.9% { transform: scaleY(1); }
+	58.5% { transform: scaleY(0); }
+	59.1% { transform: scaleY(1); }
+
+	66.9% { transform: scaleY(1); }
+	67.1% { transform: scaleY(0); }
+	68.4% { transform: scaleY(1); }
+
+	81.0% { transform: scaleY(1); }
+	81.6% { transform: scaleY(0); }
+	82.2% { transform: scaleY(1); }
+
+	83.7% { transform: scaleY(1); }
+	84.6% { transform: scaleY(0); }
+	85.5% { transform: scaleY(1); }
+	
+}
